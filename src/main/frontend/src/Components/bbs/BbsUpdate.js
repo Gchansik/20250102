@@ -98,10 +98,15 @@ function BbsUpdate() {
 
     const updateBbs = async(boardId) => {
         try {
-
+            await axios
+            .patch(`http://localhost:8989/board/${boardId}/update`)
+            .then((resp) => {
+                        console.log("[BbsUpdate.js] updateBbs() success :D");
+                        console.log(response.data);
+            })
         } catch (err) {
             console.log("[BbsUpdate.js] updateBbs() error :<");
-            console.log(err):
+            console.log(err);
         }
     }
 
